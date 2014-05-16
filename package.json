@@ -3,16 +3,19 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon --ignore node_modules/ ./bin/www"
   },
   "dependencies": {
-    "express": "*",
-    "serve-favicon": "*",
-    "morgan": "*",
-    "cookie-parser": "*",
     "body-parser": "",
+    "cookie-parser": "*",
     "debug": "*",
+    "express": "*",
     "jade": "*",
-    "node-compass": "*"
+    "lodash": "^2.4.1",
+    "morgan": "*",
+    "node-compass": "*",
+    "nodemon": "*",
+    "request-json": "*",
+    "serve-favicon": "*"
   }
 }

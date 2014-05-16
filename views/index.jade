@@ -1,5 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  p server: #{server}
+  p prefix: #{prefix}
+  p results: #{builds.length}
+
+  ul
+      each build in builds
+          li
+            | #{build.projectName} :: #{build.name} :: #{build.latestBuild.status}
+            //img(src='http://#{server}/app/rest/builds/buildType:(id:#{build.buildTypeId})/statusIcon')
+            //| #{build.status} - #{build.buildTypeId}
+
+

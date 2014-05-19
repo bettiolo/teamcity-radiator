@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var debug = require('debug')('generated-express-app');
+var debug = require('debug')('teamcity-radiator');
 var app = require('../app');
 var port =  process.env.PORT || 3000;
 

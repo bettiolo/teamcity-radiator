@@ -1,3 +1,4 @@
+var debug = require('debug')('/builds');
 var request = require('request-json');
 var util = require('util');
 var _ = require('lodash');
@@ -73,7 +74,7 @@ module.exports = function setupRoute(router) {
             _.forEach(matchedBuildTypes, function (buildType) {
                 getBuild(req.params.server, buildType.id, function(build) {
                     if (build && build[0] && build[0].status != 'SUCCESS') {
-                        console.log(util.inspect(build));
+                        debug(util.inspect(build));
                         buildType.latestBuild = build[0];
                         failedBuilds.push(buildType);
                     }

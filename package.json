@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon --ignore node_modules/ ./bin/www"
+    "start": "DEBUG=* nodemon --ignore node_modules/ ./bin/www"
   },
   "dependencies": {
     "body-parser": "",

@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "DEBUG=* nodemon --ignore node_modules/ ./bin/www"
+    "#start": "DEBUG=* nodemon --ignore node_modules/ ./bin/www",
+    "start": "DEBUG=* forever -v ./bin/www"
   },
   "dependencies": {
     "body-parser": "",
@@ -16,6 +17,7 @@
     "node-compass": "*",
     "nodemon": "*",
     "request-json": "*",
-    "serve-favicon": "*"
+    "serve-favicon": "*",
+    "forever": "*"
   }
 }

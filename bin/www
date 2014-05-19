@@ -2,6 +2,8 @@
 var debug = require('debug')('generated-express-app');
 var app = require('../app');
 
+console.log('Initializing app');
+
 app.set('port', process.env.PORT || 3000);
 
 var server = app.listen(app.get('port'), function() {

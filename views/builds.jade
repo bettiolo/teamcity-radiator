@@ -1,14 +1,12 @@
 extends layout
 
 block content
-  p server: #{server}
-  p prefix: #{prefix}
-  p results: #{builds.length}
+  p server: #{server} filter: #{prefix}
 
   ul
       each build in builds
           li
-            | #{build.projectName} :: #{build.name} :: #{build.latestBuild.status}
+            h3 #{build.projectName} :: #{build.name} :: #{build.latestBuild.status}
             //img(src='http://#{server}/app/rest/builds/buildType:(id:#{build.buildTypeId})/statusIcon')
             //| #{build.status} - #{build.buildTypeId}
 

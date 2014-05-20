@@ -3,8 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "#start": "DEBUG=* nodemon --ignore node_modules/ ./bin/www",
-    "start": "DEBUG=* forever -v ./bin/www"
+    "dev": "DEBUG=* nodemon --ignore node_modules/ ./bin/www",
+    "#start": "DEBUG=* forever -v ./bin/www",
+    "start": "DEBUG=* node ./bin/www"
+  },
+  "devDependencies" : {
+    "nodemon": "*"
   },
   "dependencies": {
     "body-parser": "",
@@ -15,7 +19,6 @@
     "lodash": "^2.4.1",
     "morgan": "*",
     "node-compass": "*",
-    "nodemon": "*",
     "request-json": "*",
     "serve-favicon": "*",
     "forever": "*"

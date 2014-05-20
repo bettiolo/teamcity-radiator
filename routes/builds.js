@@ -2,6 +2,7 @@ var debug = require('debug')('/builds');
 var request = require('request-json');
 var util = require('util');
 var _ = require('lodash');
+var buildTypes = require('../lib/buildTypes');
 
 function getBuild(server, id, callback) {
     // ?locator=status:error,status:running
@@ -32,47 +33,21 @@ function getBuild(server, id, callback) {
     )
 }
 
-function getBuildTypes(server, callback) {
-    var serverUrl = 'http://' + server;
-    var path = '/guestAuth/app/rest/buildTypes/';
-    debug('GET ' + serverUrl + path);
-    var client = request.newClient(serverUrl);
-    client.get(path,
-        function parseBuildTypes(error, response, body) {
-            if (error) {
-              debug('Error:');
-              debug(util.inspect(error));
-            }
-//            debug('Body:');
-//            debug(util.inspect(body));
-            if (!error && response.statusCode == 200) {
-                callback(body.buildType);
-            } else {
-                callback({});
-            }
-        }
-    )
-}
+
 
 module.exports = function setupRoute(router) {
     "use strict";
     /* GET home page. */
-    router.get('/:server/:prefix?', function(req, res) {
-        getBuildTypes(req.params.server, function (builds) {
-            var matchedBuildTypes = builds;
-            if (req.params.prefix) {
-                matchedBuildTypes = _.filter(builds, function (build) {
-                   return build.projectId.substr(0, req.params.prefix.length).toUpperCase()
-                          == req.params.prefix.toUpperCase();
-                });
-            }
+    router.get('/:server/:projectPrefix?', function(req, res) {
+        buildTypes.getAll(req.params.server, req.params.projectPrefix, function (builds) {
+
             var failedBuilds = [];
-            var buildTypesCount = matchedBuildTypes.length;
+            var buildTypesCount = builds.length;
             var finished = _.after(buildTypesCount, function () {
-                res.render('index', {
+                res.render('builds', {
                     title: 'Express',
                     server: req.params.server,
-                    prefix: req.params.prefix,
+                    projectPrefix: req.params.projectPrefix,
                     builds: _(failedBuilds)
                         .sortBy(function (failedBuild) {
                             return failedBuild.latestBuild.id;
@@ -81,7 +56,7 @@ module.exports = function setupRoute(router) {
                         .value()
                 });
             });
-            _.forEach(matchedBuildTypes, function (buildType) {
+            _.forEach(builds, function (buildType) {
                 getBuild(req.params.server, buildType.id, function(build) {
                     if (build && build[0] && build[0].status != 'SUCCESS') {
                         debug(util.inspect(build));

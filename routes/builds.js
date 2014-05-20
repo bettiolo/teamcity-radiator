@@ -11,13 +11,18 @@ function getBuild(server, id, callback) {
 
     // last build per client
     // /guestAuth/app/rest/buildTypes/id:ApiTeam_ApiLiveEnvironmentTests_GZipEnabled/builds/?locator=lookupLimit:1
-    var client = request.newClient('http://' + server);
-    client.get('/guestAuth/app/rest/buildTypes/id:' + id + '/builds/?locator=lookupLimit:1',
+    var serverUrl = 'http://' + server;
+    var path = '/guestAuth/app/rest/buildTypes/id:' + id + '/builds/?locator=lookupLimit:1';
+    debug('GET ' + serverUrl + path);
+    var client = request.newClient(serverUrl);
+    client.get(path,
         function parseBuilds(error, response, body) {
-//            console.log('Error:');
-//            console.log(util.inspect(error));
-//            console.log('Body:');
-//            console.log(util.inspect(body));
+            if (error) {
+              debug('Error:');
+              debug(util.inspect(error));
+            }
+//            debug('Body:');
+//            debug(util.inspect(body));
             if (!error && response.statusCode == 200) {
                 callback(body.build);
             } else {
@@ -28,13 +33,18 @@ function getBuild(server, id, callback) {
 }
 
 function getBuildTypes(server, callback) {
-    var client = request.newClient('http://' + server);
-    client.get('/guestAuth/app/rest/buildTypes/',
+    var serverUrl = 'http://' + server;
+    var path = '/guestAuth/app/rest/buildTypes/';
+    debug('GET ' + serverUrl + path);
+    var client = request.newClient(serverUrl);
+    client.get(path,
         function parseBuildTypes(error, response, body) {
-//            console.log('Error:');
-//            console.log(util.inspect(error));
-//            console.log('Body:');
-//            console.log(util.inspect(body));
+            if (error) {
+              debug('Error:');
+              debug(util.inspect(error));
+            }
+//            debug('Body:');
+//            debug(util.inspect(body));
             if (!error && response.statusCode == 200) {
                 callback(body.buildType);
             } else {

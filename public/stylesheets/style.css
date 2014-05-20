@@ -1,8 +1,31 @@
 body {
-  padding: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 2em "Lucida Grande", Helvetica, Arial, sans-serif;
+    background: black;
+    color: gray;
+    padding: 1em;
 }
 
 a {
   color: #00B7FF;
+}
+
+h1 {
+    font-size: 14px;
+}
+
+ul {
+    padding: 0;
+    color: black;
+}
+
+li.failed {
+    border: 1px solid red;
+    background-color: lightcoral;
+    list-style: none;
+    margin-bottom: 1em;
+    padding: 0.3em;
+}
+
+li img {
+    margin-right: 0.3em;
 }

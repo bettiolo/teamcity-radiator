@@ -5,9 +5,8 @@ block content
 
   ul
       each build in builds
-          li
-            h3 #{build.projectName} :: #{build.name} :: #{build.latestBuild.status}
-            img(src='http://#{server}/app/rest/builds/buildType:(id:#{build.latestBuild.buildTypeId})/statusIcon')
-            | #{build.latestBuild.id}
-
-
+          li.failed
+              img(src='http://#{server}/app/rest/builds/buildType:(id:#{build.latestBuild.buildTypeId})/statusIcon')
+              | #{build.projectName}
+              | :: #{build.name}
+              // | :: #{build.latestBuild.status}

@@ -7,7 +7,7 @@ block content
       each build in builds
           li
             h3 #{build.projectName} :: #{build.name} :: #{build.latestBuild.status}
-            //img(src='http://#{server}/app/rest/builds/buildType:(id:#{build.buildTypeId})/statusIcon')
-            //| #{build.status} - #{build.buildTypeId}
+            img(src='http://#{server}/app/rest/builds/buildType:(id:#{build.latestBuild.buildTypeId})/statusIcon')
+            | #{build.latestBuild.id}
 
 

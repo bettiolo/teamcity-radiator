@@ -1,5 +1,3 @@
 /node_modules/
-/public/.sass-cache/
-/public/stylesheets/*.css
 /.idea/
 /npm-debug.log

@@ -1,3 +1,4 @@
+var debug = require('debug')('app');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -57,6 +58,5 @@ app.use(function(err, req, res, next) {
 process.on('uncaughtException', function(err) {
   debug('Caught exception: ' + err);
 });
-
 
 module.exports = app;

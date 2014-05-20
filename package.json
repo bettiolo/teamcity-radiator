@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "preinstall": "gem update --system && gem install compass",
     "dev": "DEBUG=* nodemon --ignore node_modules/ ./bin/www",
     "start": "DEBUG=* forever -v ./bin/www"
   },

@@ -1,9 +1,18 @@
 {
   "name": "teamcity-radiator",
   "version": "0.0.1",
-  "private": true,
+  "description": "TeamCity Radiator",
+  "author": "Marco Bettiolo <marco@bettiolo.it> (https://github.com/bettiolo)",
+  "homepage": "http://github.com/bettiolo/teamcity-radiator",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bettiolo/teamcity-radiator.git"
+  },
+  "bugs": {
+    "url": "http://github.com/bettiolo/teamcity-radiator/issues"
+  },
+  "main": "bin/www",
   "scripts": {
-    "preinstall": "gem update --system && gem install compass",
     "dev": "DEBUG=* nodemon --ignore node_modules/ ./bin/www",
     "start": "DEBUG=* forever -v ./bin/www"
   },

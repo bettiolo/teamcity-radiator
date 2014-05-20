@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "DEBUG=* nodemon --ignore node_modules/ ./bin/www",
-    "start": "DEBUG=* forever -v ./bin/www",
+    "start": "DEBUG=* forever -v ./bin/www"
   },
   "devDependencies" : {
     "nodemon": "*"

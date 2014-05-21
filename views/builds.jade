@@ -6,7 +6,8 @@ block content
   ul
       each build in builds
           li.failed
-              img(src='http://#{server}/app/rest/builds/buildType:(id:#{build.latestBuild.buildTypeId})/statusIcon')
               | #{build.projectName}
-              | :: #{build.name}
+              img(src='http://#{server}/app/rest/builds/buildType:(id:#{build.latestBuild.buildTypeId})/statusIcon')
+              br
+              | #{build.name}
               // | :: #{build.latestBuild.status}

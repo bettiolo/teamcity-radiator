@@ -37,7 +37,8 @@ module.exports = function setupRoute(router) {
                     server: server,
                     projectPrefix: projectPrefix,
                     builds: failedBuildTypes,
-                    updated: new Date().getTime()
+                    updated: new Date()
+                    // updated: new Date().getTime()
                 });
 
             })

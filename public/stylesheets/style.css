@@ -2,7 +2,7 @@ body {
     font: 2em "Lucida Grande", Helvetica, Arial, sans-serif;
     background: black;
     color: gray;
-    padding: 1em;
+    padding: 0.3em;
 }
 
 a {
@@ -11,9 +11,13 @@ a {
 
 h1 {
     font-size: 14px;
+    margin: 0 0 0.3em;
+    padding: 0;
+    text-align: right;
 }
 
 ul {
+    margin: 0;
     padding: 0;
     color: black;
 }
@@ -22,10 +26,13 @@ li.failed {
     border: 1px solid red;
     background-color: lightcoral;
     list-style: none;
-    margin-bottom: 1em;
+    margin-bottom: 0.3em;
     padding: 0.3em;
+    position: relative;
 }
 
 li img {
-    margin-right: 0.3em;
+    position: absolute;
+    top: 0.3em;
+    right: 0.3em;
 }

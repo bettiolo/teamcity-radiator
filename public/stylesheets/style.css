@@ -1,15 +1,12 @@
 html,
 body {
     height: 100%;
+    background-color: transparent;
 }
 body {
     font-family: 'Titillium Web', sans-serif;
-    background: black;
     color: gray;
     padding: 0.3em;
-    /*background-image: url('../images/7-square-logo.png');*/
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 a {
@@ -30,8 +27,8 @@ ul {
 }
 
 li.failed {
-    border: 1px solid darkred;
-    background-color: rgba(255, 0, 0, 1);;
+    border: 1px solid red;
+    background-color: rgba(220, 0, 0, 0.9);;
     color: white;
     list-style: none;
     margin-bottom: 0.3em;
@@ -39,21 +36,11 @@ li.failed {
     position: relative;
     font-size: 2.7em;
     line-height: 1em;
+    box-shadow: 0 0 12px red;
 }
 
 li img {
     position: absolute;
     top: 0.3em;
     right: 0.3em;
-}
-
-pre {
-    z-index: -1;
-    position: absolute;
-    top: 6em;
-    left: 0;
-    right: 0;
-    margin: auto;
-    font-weight: bold;
-    text-align: center;
 }

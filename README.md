@@ -1,6 +1,6 @@
 teamcity-radiator
 =================
 
-Radiator for teamcity broken builds
+node.js Radiator for TeamCity broken builds
 
 ![Screenshot](docs/teamcity-radiator.png?raw=true "Screenshot")

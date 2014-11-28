@@ -46,12 +46,9 @@ module.exports = function setupRoute(router) {
                 }
                 else
                 {
-                    var arrayOfAnimals = ["http://www.weirdhut.com/wp-content/uploads/2013/07/angry-cat-3.jpg", "http://img2.wikia.nocookie.net/__cb20121008044759/thehungergames/images/4/48/Happy_cat.jpg"]
-
                       res.render('cats', {
                         title: 'Express',
                         server: server,
-                        catImageUrl: arrayOfAnimals[Math.floor(Math.random()*arrayOfAnimals.length)],
                         updated: new Date()
                         // updated: new Date().getTime()
                     });

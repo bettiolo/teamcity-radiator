@@ -32,14 +32,27 @@ module.exports = function setupRoute(router) {
 
                 debug('Total build types found: ' + buildTypes.length);
 
-                res.render('builds', {
-                    title: 'Express',
-                    server: server,
-                    projectPrefix: projectPrefix,
-                    builds: failedBuildTypes,
-                    updated: new Date()
-                    // updated: new Date().getTime()
-                });
+                if(sortedFailedBuilds.length > 0)
+               {
+
+                    res.render('builds', {
+                        title: 'Express',
+                        server: server,
+                        projectPrefix: projectPrefix,
+                        builds: failedBuildTypes,
+                        updated: new Date()
+                        // updated: new Date().getTime()
+                    });
+                }
+                else
+                {
+                      res.render('cats', {
+                        title: 'Express',
+                        server: server,
+                        updated: new Date()
+                        // updated: new Date().getTime()
+                    });
+                }
 
             })
         });

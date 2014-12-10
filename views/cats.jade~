@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1 #{server} | Project prefix: #{projectPrefix} | Updated: #{updated}
+
+    ul
+        each build in builds
+            li.failed
+                | #{build.projectName}
+                img(src='http://#{server}/app/rest/builds/buildType:(id:#{build.latestBuild.buildTypeId})/statusIcon')
+                br
+                | #{build.name}
+                // | :: #{build.latestBuild.status}

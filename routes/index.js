@@ -8,7 +8,7 @@ var setupFooRoutes = require('./foo');
 setupFooRoutes(router);
 setupBuildsRoutes(router);
 
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
   res.status(200).send('<h1>Hello World</h1>');
 });
 

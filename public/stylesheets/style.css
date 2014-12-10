@@ -1,18 +1,19 @@
 html,
 body {
-    height: 100%;
-    background-color: transparent;
+  height: 100%;
+  background-color: transparent;
 }
+
 body {
-    font-family: 'Titillium Web', sans-serif;
-    color: gray;
-    padding: 0.3em;
+  font-family: 'Titillium Web', sans-serif;
+  color: gray;
+  padding: 0.3em;
 }
 
 div {
-    text-align: center;
-    height: 100vh;
-    width: 100vw;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 a {
@@ -20,44 +21,44 @@ a {
 }
 
 h1 {
-    font-size: 14px;
-    margin: 0 0 0.3em;
-    padding: 0;
-    text-align: right;
+  font-size: 14px;
+  margin: 0 0 0.3em;
+  padding: 0;
+  text-align: right;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 li.failed {
-    border: 2px solid red;
-    border-radius: 5px;
-    background-color: rgba(220, 0, 0, 0.9);;
-    color: white;
-    list-style: none;
-    margin-bottom: 0.3em;
-    padding: 0.3em;
-    position: relative;
-    font-size: 2.7em;
-    line-height: 1em;
-    box-shadow: 0 0 12px red;
+  border: 2px solid red;
+  border-radius: 5px;
+  background-color: rgba(220, 0, 0, 0.9);;
+  color: white;
+  list-style: none;
+  margin-bottom: 0.3em;
+  padding: 0.3em;
+  position: relative;
+  font-size: 2.7em;
+  line-height: 1em;
+  box-shadow: 0 0 12px red;
 }
 
 li img {
-    position: absolute;
-    top: 0.3em;
-    right: 0.3em;
+  position: absolute;
+  top: 0.3em;
+  right: 0.3em;
 }
 
 #catImg {
-    margin-left: auto;
-    margin-right: auto;
-    vertical-align: middle;
-   margin: 0;
-   position: absolute;               
-   top: 50%;       
-   left: 40%;                  
-   transform: translate(0, -50%) 
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(0, -50%)
 }

@@ -44,8 +44,7 @@ module.exports = function setupRoute(router) {
             updated: new Date()
             // updated: new Date().getTime()
           });
-        }
-        else {
+        } else {
           res.render('cats', {
             title: 'Express',
             server: server,

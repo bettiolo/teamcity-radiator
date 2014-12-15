@@ -1,3 +1,4 @@
+var uuid = require('node-uuid');
 var debug = require('debug')('/builds');
 var buildTypesClient = require('../lib/buildTypesClient');
 var buildsClient = require('../lib/buildsClient');
@@ -34,25 +35,19 @@ module.exports = function setupRoute(router) {
 
         debug('Total build types found: ' + buildTypes.length);
 
+        var buildStatus = {
+          title: 'TeamCity Radiator',
+          server: server,
+          projectPrefix: projectPrefix,
+          updated: new Date()
+        };
         if (sortedFailedBuilds.length > 0) {
-
-          res.render('builds', {
-            title: 'Express',
-            server: server,
-            projectPrefix: projectPrefix,
-            builds: failedBuildTypes,
-            updated: new Date()
-            // updated: new Date().getTime()
-          });
+          buildStatus.builds = failedBuildTypes;
+          res.render('builds', buildStatus);
         } else {
-          res.render('cats', {
-            title: 'Express',
-            server: server,
-            updated: new Date()
-            // updated: new Date().getTime()
-          });
+          buildStatus.random = uuid.v4();
+          res.render('cats', buildStatus);
         }
-
       })
     });
   });

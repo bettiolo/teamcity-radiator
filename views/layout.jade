@@ -6,4 +6,6 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Titillium+Web')
   body
-    block content
+    section#content
+      h5 #{server} | Project prefix: #{projectPrefix} | Updated: #{updated}
+      block content

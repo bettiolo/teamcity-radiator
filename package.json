@@ -16,7 +16,7 @@
     "dev": "DEBUG=* nodemon --ignore node_modules/ ./bin/www",
     "start": "DEBUG=* forever -v ./bin/www"
   },
-  "devDependencies" : {
+  "devDependencies": {
     "nodemon": "*"
   },
   "dependencies": {
@@ -24,11 +24,12 @@
     "cookie-parser": "*",
     "debug": "*",
     "express": "*",
+    "forever": "*",
     "jade": "*",
     "lodash": "^2.4.1",
     "morgan": "*",
+    "node-uuid": "^1.4.2",
     "request-json": "*",
-    "serve-favicon": "*",
-    "forever": "*"
+    "serve-favicon": "*"
   }
 }

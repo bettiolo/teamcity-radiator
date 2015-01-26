@@ -15,8 +15,19 @@ a {
   color: #00B7FF;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: inherit;
+  margin: 0 0 0.3em;
+  padding: 0;
+}
+
 h5 {
-  font-size: 14px;
+  font-size: 2vh;
   margin: 0 0 0.3em;
   padding: 0;
   text-align: right;
@@ -28,20 +39,32 @@ ul {
 }
 
 li.failed {
-  border: 2px solid red;
+  border: 2px solid;
   border-radius: 5px;
-  background-color: rgba(220, 0, 0, 0.9);;
   color: white;
   list-style: none;
   margin-bottom: 0.3em;
   padding: 0.3em;
   position: relative;
-  font-size: 2.7em;
+  font-size: 4vh;
   line-height: 1em;
   box-shadow: 0 0 12px red;
 }
 
-li img {
+li.failed {
+  border-color: red;
+  background-color: rgba(220, 0, 0, 0.9);
+  box-shadow: 0 0 12px red;
+}
+
+li.assigned {
+  border-color: orangered;
+  background-color: rgba(255, 69, 0, 0.9);
+  box-shadow: 0 0 12px orangered;
+}
+
+li span.assignee {
+  font-style: italic;
   position: absolute;
   top: 0.3em;
   right: 0.3em;

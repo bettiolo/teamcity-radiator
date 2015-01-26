@@ -20,16 +20,16 @@
     "nodemon": "*"
   },
   "dependencies": {
-    "body-parser": "",
-    "cookie-parser": "*",
-    "debug": "*",
-    "express": "*",
-    "forever": "*",
-    "jade": "*",
-    "lodash": "^2.4.1",
-    "morgan": "*",
+    "body-parser": "^1.10.2",
+    "cookie-parser": "^1.3.3",
+    "debug": "^2.1.1",
+    "express": "^4.11.1",
+    "forever": "^0.13.0",
+    "jade": "^1.9.1",
+    "lodash": "^3.0.0",
+    "morgan": "^1.5.1",
     "node-uuid": "^1.4.2",
-    "request-json": "*",
-    "serve-favicon": "*"
+    "request-json": "^0.5.0",
+    "serve-favicon": "^2.2.0"
   }
 }

@@ -12,6 +12,8 @@ module.exports = function setupRoute(router) {
   router.get('/:server/:projectPrefix?', function (req, res) {
     var server = req.params.server;
     var projectPrefix = req.params.projectPrefix;
+    var projectDisplayNameToStrip = req.query.projectDisplayNameToStrip;
+
     investigations.get(server, projectPrefix, function(err, investigations) {
       // if (err) ???
       buildTypesClient.getAll(server, projectPrefix, function (buildTypes) {
@@ -35,6 +37,11 @@ module.exports = function setupRoute(router) {
             if (investigations[failedBuildType.id]) {
               failedBuildType.assignee = investigations[failedBuildType.id];
             }
+
+            if (projectDisplayNameToStrip != '') {
+               failedBuildType.projectName = failedBuildType.projectName.replace(projectDisplayNameToStrip + ' :: ', '');
+            }
+
             debug(failedBuildType.assignee);
             failedBuildTypes.push(failedBuildType);
           });

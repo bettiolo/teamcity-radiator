@@ -2,7 +2,7 @@ var uuid = require('node-uuid');
 var debug = require('debug')('/builds');
 var buildTypesClient = require('../lib/buildTypesClient');
 var buildsClient = require('../lib/buildsClient');
-var investigations = require('../lib/investigations');
+var investigationsClient = require('../lib/investigations');
 var _ = require('lodash');
 
 module.exports = function setupRoute(router) {
@@ -14,8 +14,11 @@ module.exports = function setupRoute(router) {
     var projectPrefix = req.params.projectPrefix;
     var projectDisplayNameToStrip = req.query.projectDisplayNameToStrip;
 
-    investigations.get(server, projectPrefix, function(err, investigations) {
-      // if (err) ???
+    investigationsClient.get(server, projectPrefix, function(err, investigations) {
+      if (err) {
+        debug('Error loading investigations', err);
+        investigations = {};
+      }
       buildTypesClient.getAll(server, projectPrefix, function (buildTypes) {
         var buildTypeIds = _.map(buildTypes, function (buildType) {
           return buildType.id

@@ -68,15 +68,7 @@ li span.assignee {
   right: 0.3em;
 }
 
-#cat {
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  margin-right: -50vw;
-  transform: translate(-50%, -50%);
-}
-
-#thumbs {
+.center {
   padding-top: 3em;
   text-align: center;
 }

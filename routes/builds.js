@@ -64,10 +64,16 @@ module.exports = function setupRoute(router) {
             res.render('builds', buildStatus);
           } else {
             buildStatus.random = uuid.v4();
-            if (successView === 'thumbs') {
-              res.render('thumbs', buildStatus);
-            } else {
-              res.render('cats', buildStatus);
+            switch(successView) {
+              case 'thumbs':
+                res.render('thumbs', buildStatus);
+                break;
+              case 'cats':
+                res.render('cats', buildStatus);
+                break;
+              default:
+                res.render('thumbs', buildStatus);
+                break;
             }
           }
         })

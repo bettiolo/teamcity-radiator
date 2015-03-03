@@ -13,6 +13,7 @@ module.exports = function setupRoute(router) {
     var server = req.params.server;
     var projectPrefix = req.params.projectPrefix;
     var projectDisplayNameToStrip = req.query.projectDisplayNameToStrip;
+    var successView = req.query.successView;
 
     investigationsClient.get(server, projectPrefix, function(err, investigations) {
       if (err) {
@@ -63,7 +64,11 @@ module.exports = function setupRoute(router) {
             res.render('builds', buildStatus);
           } else {
             buildStatus.random = uuid.v4();
-            res.render('cats', buildStatus);
+            if (successView === 'thumbs') {
+              res.render('thumbs', buildStatus);
+            } else {
+              res.render('cats', buildStatus);
+            }
           }
         })
       });

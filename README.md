@@ -11,7 +11,7 @@ Where:
 
 Optional querystring parameters:
 * `projectDisplayNameToStrip`: Normally projects are displayed in the "Project Display Name :: Build Name" syntax. If the leading part is always the same and you want to hide it, you can pass it in here, in a URL encoded format. For example, your project group display name might be "Search Team", but the ID might be "SearchTeam" (no space). You can hide the leading part via: `http://localhost/{teamcity-hostname}/SearchTeam?projectDisplayNameToStrip=Search%20Team`.
-* `successView`: When no builds are failing, the default view is of thumbs up. This can be overriden to other views: "cats" shows random images of cats.
+* `successView`: When no builds are failing, the default view is a thumbs up image. This can be overriden to other views: "cats" shows random images of cats.
 
 Heavily blurred screenshot:
 ![Screenshot](docs/teamcity-radiator.png?raw=true "Screenshot")

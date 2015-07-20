@@ -71,6 +71,10 @@ module.exports = function setupRoute(router) {
               case 'cats':
                 res.render('cats', buildStatus);
                 break;
+              case 'image':
+                buildStatus.imageUrl = req.query.imageUrl;
+                res.render('image', buildStatus);
+                break;
               default:
                 res.render('thumbs', buildStatus);
                 break;
